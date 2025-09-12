@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // AGREGAR ESTA FUNCIÓN
 async function loadCategories() {
   try {
-    const response = await fetch('http://localhost:3000/api/categories');
+    const response = await fetch('https://sandbook-production-aa04.up.railway.app/api/categories');
     if (response.ok) {
       categories = await response.json();
       updateCategorySelects();
@@ -98,7 +98,7 @@ async function handleAddProduct(event, token) {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/api/admin", {
+    const response = await fetch("https://sandbook-production-aa04.up.railway.app/api/admin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ async function handleDeleteProduct(productId, token) {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/admin/${productId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/admin/${productId}`,
       {
         method: "DELETE",
         headers: {
@@ -155,7 +155,7 @@ async function handleEditClick(productId, token) {
   try {
     // 1. Obtenemos los datos actuales del producto
     const response = await fetch(
-      `http://localhost:3000/api/products/${productId}`,
+            `https://sandbook-production-aa04.up.railway.app/api/products/${productId}`,
     );
     if (!response.ok) {
       throw new Error("No se pudo obtener la información del producto.");
@@ -246,7 +246,7 @@ async function handleUpdateProduct(event, productId, token) {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/admin/${productId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/admin/${productId}`,
       {
         method: "PUT",
         headers: {
@@ -272,7 +272,7 @@ async function handleUpdateProduct(event, productId, token) {
 
 async function fetchAndDisplayProducts() {
   try {
-    const response = await fetch("http://localhost:3000/api/products");
+    const response = await fetch("https://sandbook-production-aa04.up.railway.app/api/products");
     if (!response.ok) throw new Error("Error al obtener los productos.");
 
     const products = await response.json();

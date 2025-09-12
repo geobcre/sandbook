@@ -11,8 +11,8 @@ async function loadCategoriesAndProducts() {
   try {
     // Cargar categorías y productos en paralelo
     const [categoriesResponse, productsResponse] = await Promise.all([
-      fetch('http://localhost:3000/api/categories'),
-      fetch('http://localhost:3000/api/products')
+      fetch('https://sandbook-production-aa04.up.railway.app/api/categories'),
+      fetch('https://sandbook-production-aa04.up.railway.app/api/products')
     ]);
 
     if (categoriesResponse.ok && productsResponse.ok) {
@@ -137,7 +137,7 @@ function handleAddToCart(productId) {
 
 async function addProductToBackendCart(userId, productId) {
   try {
-    const response = await fetch("http://localhost:3000/api/carts/add", {
+    const response = await fetch("https://sandbook-production-aa04.up.railway.app/api/carts/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

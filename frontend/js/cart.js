@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchCart(userId) {
   try {
-    const response = await fetch(`http://localhost:3000/api/carts/${userId}`);
+    const response = await fetch(`https://sandbook-production-aa04.up.railway.app/api/carts/${userId}`);
     if (!response.ok) {
       // Si el carrito no se encuentra (404), es un carrito vacío, no un error.
       if (response.status === 404) {
@@ -87,7 +87,7 @@ function displayCart(cart) {
 
 async function removeItem(itemId) {
   try {
-    const response = await fetch("http://localhost:3000/api/carts/remove", {
+    const response = await fetch("https://sandbook-production-aa04.up.railway.app/api/carts/remove", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

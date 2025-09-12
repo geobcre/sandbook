@@ -76,7 +76,7 @@ function setupEventListeners(token) {
 async function loadCategories() {
   try {
     const response = await fetch(
-      "https://book-ecommerce-production-dcaf.up.railway.app/api/categories",
+      "https://sandbook-production-aa04.up.railway.app/api/categories",
     );
     if (response.ok) {
       categories = await response.json();
@@ -107,7 +107,7 @@ function updateCategorySelects() {
 async function fetchAndDisplayProducts() {
   try {
     const response = await fetch(
-      "https://book-ecommerce-production-dcaf.up.railway.app/api/products",
+      "https://sandbook-production-aa04.up.railway.app/api/products",
     );
     if (!response.ok) throw new Error("Error fetching products.");
     const products = await response.json();
@@ -171,7 +171,7 @@ async function handleAddProduct(event, token) {
 
   try {
     const response = await fetch(
-      "https://book-ecommerce-production-dcaf.up.railway.app/api/admin",
+      "https://sandbook-production-aa04.up.railway.app/api/admin",
       {
         method: "POST",
         headers: {
@@ -200,7 +200,7 @@ async function handleDeleteProduct(productId, token) {
 
   try {
     const response = await fetch(
-      `https://book-ecommerce-production-dcaf.up.railway.app/api/admin/${productId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/admin/${productId}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
@@ -222,7 +222,7 @@ async function handleDeleteProduct(productId, token) {
 async function handleEditClick(productId, token) {
   try {
     const response = await fetch(
-      `https://book-ecommerce-production-dcaf.up.railway.app/api/products/${productId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/products/${productId}`,
     );
     if (!response.ok) throw new Error("Could not fetch product info.");
     const product = await response.json();
@@ -296,7 +296,7 @@ async function handleUpdateProduct(event, productId, token) {
 
   try {
     const response = await fetch(
-      `https://book-ecommerce-production-dcaf.up.railway.app/api/admin/${productId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/admin/${productId}`,
       {
         method: "PUT",
         headers: {
@@ -325,7 +325,7 @@ async function handleUpdateProduct(event, productId, token) {
 async function fetchAndDisplayUsers(token) {
   try {
     const response = await fetch(
-      "https://book-ecommerce-production-dcaf.up.railway.app/api/users",
+      "https://sandbook-production-aa04.up.railway.app/api/users",
       {
         headers: { Authorization: `Bearer ${token}` },
       },
@@ -388,7 +388,7 @@ async function handleDeleteUser(userId, token) {
 
   try {
     const response = await fetch(
-      `https://book-ecommerce-production-dcaf.up.railway.app/api/users/${userId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/users/${userId}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
@@ -454,7 +454,7 @@ async function handleUpdateUserRole(event, userId, token) {
 
   try {
     const response = await fetch(
-      `https://book-ecommerce-production-dcaf.up.railway.app/api/users/${userId}`,
+      `https://sandbook-production-aa04.up.railway.app/api/users/${userId}`,
       {
         method: "PUT",
         headers: {

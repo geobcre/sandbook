@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contacto - Sandbook</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h2>📚 Sandbook</h2>
+                        </a>
+                    </div>
+                    <ul id="navbar-links">
+                        <!-- Los enlaces se generarán dinámicamente -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="contact-hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Contáctanos</h1>
+                        <p class="hero-subtitle">¿Tienes alguna pregunta sobre nuestros libros? ¡Nos encantaría escucharte!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Info Section -->
+            <section class="contact-info-section">
+                <div class="container">
+                    <div class="contact-info-grid">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email</h3>
+                            <p>sandbookp@gmail.com</p>
+                            <a href="mailto:sandbookp@gmail.com" class="contact-link">Enviar Email</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">💬</div>
+                            <h3>WhatsApp</h3>
+                            <p>Respuesta rápida</p>
+                            <a href="https://wa.me/50235704110?text=Hola%20Sandbook,%20me%20interesa%20información%20sobre%20sus%20libros" target="_blank" class="whatsapp-button">
+                                <span class="whatsapp-icon"></span>
+                                Chatear por WhatsApp
+                            </a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📍</div>
+                            <h3>Dirección</h3>
+                            <p>123 Calle Buganbilia, Chimaltenango <br>GuatemalaS</p>
+                            
+                            <!-- Mapa de Google Maps embebido -->
+                            <div class="map-container">
+                                <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15440.06210209529!2d-90.8327010401017!3d14.655060149282033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s1ra%20calle%2C%209na%20avenida%2C%20zona%203%2C%20colonia%20las%20Buganvilias%2C%20lote%202%2C%20Chimaltenango%2C%20Chimaltenango!5e0!3m2!1ses-419!2sgt!4v1757648144932!5m2!1ses-419!2sgt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    width="100%" 
+                                    height="200" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            
+                            <!-- Enlace a Google Maps -->
+                            <a href="https://maps.google.com/?q=123+Calle+de+los+Libros+Ciudad+Pais" 
+                               target="_blank" 
+                               class="maps-link">
+                                <span class="maps-icon">🗺️</span>
+                                Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="contact-form-section">
+                <div class="container">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h2>Envíanos un mensaje</h2>
+                            <p>Completa el formulario y te responderemos pronto</p>
+                        </div>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/meoldovd" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nombre completo</label>
+                                    <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="consulta-general">Consulta General</option>
+                                    <option value="problema-pedido">Problema con Pedido</option>
+                                    <option value="sugerencia-libro">Sugerencia de Libro</option>
+                                    <option value="devolucion">Devolución</option>
+                                    <option value="partnership">Partnership/Colaboración</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" value="yes" />
+                                    <span class="checkmark"></span>
+                                    Quiero recibir noticias sobre nuevos libros y ofertas
+                                </label>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="btn btn-primary btn-large">
+                                <span class="btn-text">Enviar Mensaje</span>
+                                <span class="btn-loading" style="display: none;">Enviando...</span>
+                            </button>
+                        </form>
+
+                        <div id="form-status" class="form-status" style="display: none;"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 Sandbook</h3>
+                    <p>Tu librería online de confianza</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="products.html">Productos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p> sandbookp@gmail.com</p>
+                    <p>📱 + (502) 35704110</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sandbook. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- Al final del body -->
+        <script src="js/auth.js"></script>
+        <script src="js/contact.js"></script>
+    </body>
+</html>

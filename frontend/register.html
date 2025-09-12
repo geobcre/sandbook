@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registrarse - Sandbook</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h2>📚 Sandbook</h2>
+                        </a>
+                    </div>
+                    <ul id="navbar-links">
+                        <!-- Los enlaces se generarán dinámicamente -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="auth-hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Únete a Sandbook</h1>
+                        <p class="hero-subtitle">Crea tu cuenta y comienza a explorar miles de libros increíbles</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Register Form Section -->
+            <section class="auth-form-section">
+                <div class="container">
+                    <div class="auth-form-container">
+                        <div class="form-header">
+                            <h2>Crear Cuenta</h2>
+                            <p>Completa el formulario para registrarte</p>
+                        </div>
+                        
+                        <form id="register-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" id="password" name="password" required placeholder="Mínimo 6 caracteres" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirmar Contraseña</label>
+                                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Repite tu contraseña" />
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" value="yes" required />
+                                    <span class="checkmark"></span>
+                                    Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" value="yes" />
+                                    <span class="checkmark"></span>
+                                    Quiero recibir noticias sobre nuevos libros y ofertas
+                                </label>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="btn btn-primary btn-large">
+                                <span class="btn-text">Crear Cuenta</span>
+                                <span class="btn-loading" style="display: none;">Creando...</span>
+                            </button>
+                        </form>
+
+                        <div class="auth-links">
+                            <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                            <p><a href="index.html">← Volver al inicio</a></p>
+                        </div>
+
+                        <div id="form-status" class="form-status" style="display: none;"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 Sandbook</h3>
+                    <p>Tu librería online de confianza</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="products.html">Productos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p> sandbookp@gmail.com</p>
+                    <p>📱 + (502) 35704110</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sandbook. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script src="js/auth.js"></script>
+        <script src="js/register.js"></script>
+    </body>
+</html>

@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard Admin - Sandbook</title>
         <link rel="stylesheet" href="css/styles.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <header>
@@ -53,13 +56,18 @@
                         <input type="number" id="stock" name="stock" required />
 
                         <label for="imageUrl">URL de la Imagen:</label>
-                        <input type="url" id="imageUrl" name="imageUrl" placeholder="https://ejemplo.com/imagen.jpg" />
+                        <input
+                            type="url"
+                            id="imageUrl"
+                            name="imageUrl"
+                            placeholder="https://ejemplo.com/imagen.jpg"
+                        />
 
                         <!-- En el formulario de agregar producto -->
                         <label for="category">Categoría:</label>
                         <select id="category" name="category">
-                          <option value="">Sin categoría</option>
-                          <!-- Las opciones se cargarán dinámicamente -->
+                            <option value="">Sin categoría</option>
+                            <!-- Las opciones se cargarán dinámicamente -->
                         </select>
 
                         <button type="submit">Añadir Producto</button>
@@ -67,8 +75,17 @@
                 </div>
 
                 <!-- Columna 2: Lista de Productos -->
-                <div id="admin-product-list-container">
-                    <!-- La tabla de productos se insertará aquí -->
+                <!-- Columna 2: Listas -->
+                <div style="flex: 2 1 500px">
+                    <div id="admin-product-list-container">
+                        <!-- La tabla de productos se insertará aquí -->
+                    </div>
+
+                    <!-- La tabla de usuarios se insertará aquí -->
+                    <div
+                        id="admin-user-list-container"
+                        style="margin-top: 2rem"
+                    ></div>
                 </div>
             </div>
         </main>
@@ -89,7 +106,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p> contacto@sandbook.com</p>
+                    <p>contacto@sandbook.com</p>
                     <p>📱 +1 (555) 123-4567</p>
                 </div>
             </div>

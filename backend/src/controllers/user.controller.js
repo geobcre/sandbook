@@ -150,11 +150,46 @@ export const deleteUserById = async (req, res) => {
   try {
     const { id } = req.params;
     const userId = parseInt(id);
-    const user = await prisma.user.delete({
+    
+    // Verificar si el usuario existe
+    const user = await prisma.user.findUnique({
       where: { id: userId },
+      include: {
+        Cart: {
+          include: {
+            items: true
+          }
+        }
+      }
     });
-    res.status(200).json({ message: "User deleted successfully" });
+    
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+    
+    // Eliminar en cascada: primero los items del carrito, luego los carritos, y finalmente el usuario
+    await prisma.$transaction(async (tx) => {
+      // Eliminar todos los elementos de los carritos del usuario
+      for (const cart of user.Cart) {
+        await tx.cartItem.deleteMany({
+          where: { cartId: cart.id }
+        });
+      }
+      
+      // Eliminar todos los carritos del usuario
+      await tx.cart.deleteMany({
+        where: { userId: userId }
+      });
+      
+      // Finalmente, eliminar el usuario
+      await tx.user.delete({
+        where: { id: userId }
+      });
+    });
+    
+    res.status(200).json({ message: "Usuario eliminado exitosamente" });
   } catch (error) {
+    console.error("Error deleting user:", error);
     res.status(500).json({ message: error.message });
   }
 };

@@ -43,7 +43,7 @@ model Product {
   stock       Int        @default(0)
   imageUrl    String?
   categoryId  Int?
-  category    Category?  @relation(fields: [categoryId], references: [id])
+  category    Category?  @relation(fields: [categoryId], references: [id], onDelete: SetNull)
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   CartItem    CartItem[]
@@ -52,7 +52,7 @@ model Product {
 model Cart {
   id        Int        @id @default(autoincrement())
   userId    Int
-  user      User       @relation(fields: [userId], references: [id])
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   items     CartItem[]
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
@@ -61,8 +61,8 @@ model Cart {
 model CartItem {
   id        Int     @id @default(autoincrement())
   cartId    Int
-  cart      Cart    @relation(fields: [cartId], references: [id])
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
   productId Int
-  product   Product @relation(fields: [productId], references: [id])
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   quantity  Int     @default(1)
 }

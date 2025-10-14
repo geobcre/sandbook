@@ -34,7 +34,7 @@ app.use("/api/admin", rolesRouter);
 app.use('/api/categories', categoryRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.sendFile(path.join(__dirname, '../../frontend/index.html'));
 });
 
 app.get("/api/dashboard", async (req, res) => {

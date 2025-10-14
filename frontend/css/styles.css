@@ -2110,3 +2110,121 @@ footer::before {
 .footer-section ul li a:hover::after {
     left: 100%;
 }
+
+/* PWA y Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Navegación móvil */
+    .nav-container {
+      flex-direction: column;
+      padding: 0.5rem;
+    }
+    
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    nav ul li {
+      margin: 0.25rem;
+    }
+    
+    nav ul li a {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Hero section móvil */
+    .hero {
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+    }
+    
+    /* Features grid móvil */
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    /* Stats grid móvil */
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    /* Footer móvil */
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-section {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* PWA específico */
+  @media (display-mode: standalone) {
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    header {
+      padding-top: calc(1rem + env(safe-area-inset-top));
+    }
+  }
+  
+  /* Touch optimizations */
+  button, .btn, input, select, textarea {
+    min-height: 44px; /* Tamaño mínimo recomendado para touch */
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Loading states */
+  .loading {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  /* Offline indicator */
+  .offline-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ff6b6b;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .offline-indicator.show {
+    transform: translateY(0);
+  }

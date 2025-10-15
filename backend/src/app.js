@@ -9,11 +9,33 @@ import categoryRoutes from './routers/category.routers.js';
 import { PrismaClient } from './generated/prisma/index.js';
 import path from "path";
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+// Cargar variables de entorno
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-const prisma = new PrismaClient();
+
+// Configurar Prisma con manejo de errores
+const prisma = new PrismaClient({
+  log: ['query', 'info', 'warn', 'error'],
+});
+
+// Función para probar la conexión a la base de datos
+async function testDatabaseConnection() {
+  try {
+    await prisma.$connect();
+    console.log('✅ Conexión a la base de datos exitosa');
+  } catch (error) {
+    console.error('❌ Error conectando a la base de datos:', error.message);
+    console.error('DATABASE_URL:', process.env.DATABASE_URL ? 'Configurada' : 'No configurada');
+  }
+}
+
+// Probar conexión al iniciar
+testDatabaseConnection();
 
 app.use(cors()); // Habilita CORS para todas las rutas
 app.use(express.json());
